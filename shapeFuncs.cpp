@@ -58,7 +58,7 @@ string boxToString(Box b, int precision) {
 	//Point string
 	oss << "ul=(" << b.ul.x << "," << b.ul.y << ")" << ",";
 	//Width string
-	oss << " " << "w=" << b.width << ",";
+	oss << "w=" << b.width << ",";
 	//Height string
 	oss << "h=" << b.height;
  	
