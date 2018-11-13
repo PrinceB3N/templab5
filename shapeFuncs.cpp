@@ -53,10 +53,16 @@ string pointToString(Point p, int precision) {
 }
 
 string boxToString(Box b, int precision) {
-  
-  // SAMPLE FORMAT: [ul=(3.4,-5), w=5,h=7]
-  
-  return "stub!"; // TODO: Delete this line and comment and replace with appropriate code
+	ostringstream oss;
+	oss << setprecision(precision);
+	//Point string
+	oss <<"ul=("<<b.ul.x<<","<<b.ul.y<<")" << ", ";
+	//Width string
+	oss << "w="<<b.width << ",";
+	//Height string
+	oss << "h="<<b.height;
+ 	
+ 	return oss.str();
 }
  
 
@@ -88,7 +94,18 @@ bool boxesApproxEqual(Box b1, Box b2, double tolerance) {
 
   // TODO: FILL THIS IN WITH APPROPRIATE CODE
 
-  return false; // STUB!  TODO: Delete this line and comment and replace with appropriate code
+	if(!(pointsApproxEqual(b1.ul,b2.ul))){
+		return false;
+	}
+	else if(!(fabs(b1.width-b2.width)<tolerance)){
+		return false;
+	}
+	else if(!(fabs(b1.height-b2.height)<tolerance)){
+		return false;
+	}
+	else{
+		return true;
+	}
 }
 
 
@@ -103,8 +120,8 @@ bool boxesApproxEqual(Box b1, Box b2, double tolerance) {
 
 void initBox(struct Box *b, double ulx, double uly, double w, double h)
 {
-	b->x=ulx;
-	b->y=uly;
+	b->ul.x=ulx;
+	b->ul.y=uly;
 	b->width=w;
 	b->height=h;
 
@@ -113,6 +130,9 @@ void initBox(struct Box *b, double ulx, double uly, double w, double h)
 
 
 double areaOfBox(Box b) {
+	
+	//calculate area of box
+	double area = b.width*b.height;
 
-	return b.w * b.h;
+	return area;
 }
