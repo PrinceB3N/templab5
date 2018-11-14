@@ -34,9 +34,14 @@ double distanceBetween(Point p, Point q) {
 // p->x is a shortcut for (*p).x ( -> means deference AND THEN go inside the struct)
 // p->y is a shortcut for (*p).y ( -> means deference AND THEN go inside the struct)
 
-//@Pre TRUE
-//@Post	initializes passed in struct Point with x and y values
+
+
 void initPoint(struct Point *p, double xVal, double yVal) {
+//Precondition: p is the address of variable of type Point is passed in.
+//xVal is a double that will replace the x value of the Point that p points to.
+//yVal is a double that will replace the y value of the Point that p points to.
+//PostCondition: The Point whose address was passed in will have its x and y values changed to xVal and yVal, respectively.
+	
   
 	p->x=xVal;
 	p->y=yVal;
