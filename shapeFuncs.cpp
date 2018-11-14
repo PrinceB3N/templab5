@@ -51,10 +51,10 @@ void initPoint(struct Point *p, double xVal, double yVal) {
 
 
 string pointToString(Point p, int precision) {
-  ostringstream oss;
-  oss << setprecision(precision); // set precision to 3 decimal places
-  oss << "(" << p.x << "," << p.y << ")";
-  return oss.str();
+  	ostringstream oss;
+  	oss << setprecision(precision); // set precision to 3 decimal places
+  	oss << "(" << p.x << "," << p.y << ")";
+  	return oss.str();
 }
 
 string boxToString(Box b, int precision) {
@@ -82,6 +82,7 @@ bool pointsApproxEqual(Point p1,
   return distanceBetween(p1,p2) < tolerance;
 
 }
+
 
 bool boxesApproxEqual(Box b1, Box b2, double tolerance) {
 
