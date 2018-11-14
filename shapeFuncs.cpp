@@ -38,9 +38,9 @@ double distanceBetween(Point p, Point q) {
 
 void initPoint(struct Point *p, double xVal, double yVal) {
 //Precondition: p is the address of variable of type Point is passed in.
-//xVal is a double that will replace the x value of the Point that p points to.
-//yVal is a double that will replace the y value of the Point that p points to.
-//PostCondition: The Point whose address was passed in will have its x and y values changed to xVal and yVal, respectively.
+//xVal is a double that will initialize the x value of the Point that p points to.
+//yVal is a double that will initialize the y value of the Point that p points to.
+//PostCondition: The Point whose address was passed in will have its x and y values intialized to xVal and yVal, respectively.
 	
   
 	p->x=xVal;
